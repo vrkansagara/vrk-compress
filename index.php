@@ -11,6 +11,7 @@
  * Author Email: vrkansagara@gmail.com
 */
 
+ini_set('display_errors',1);
 include_once  __DIR__.'/compress.php';
 
 // This code always be the last in function.php file.
@@ -33,5 +34,5 @@ function foo_buffer_go(){
 
 add_action('shutdown', 'foo_buffer_stop', 1000);
 function foo_buffer_stop(){
-    ob_end_flush();
+//    ob_end_flush();
 }
