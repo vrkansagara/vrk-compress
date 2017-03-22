@@ -13,16 +13,16 @@
 
 include_once  __DIR__.'/compress.php';
 
-// This code alwayse be the last in function.php file.
+// This code always be the last in function.php file.
 /**
  * Modify final html output before sending to the browser for rendering process.
  * @param $buffer
  * @return mixed
  */
 function callback($buffer) {
-    $buffer = getCompressedOutPut($buffer);
-//    $buffer = compress($buffer);
-    // modify buffer here, and then return the updated code
+    if ( !is_user_logged_in()) {
+        $buffer = getCompressedOutPut($buffer);
+    }
     return $buffer;
 }
 
