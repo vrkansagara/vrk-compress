@@ -1,0 +1,30 @@
+{
+  "name": "vrkansagara/vrk-compress",
+  "type": "wordpress-plugin",
+  "description": "Official vrk-compress plugin for WordPress",
+  "homepage": "https://vrkansagara.in/plugines/vrk-compress",
+  "license": "BSD 3-Clause License",
+  "keywords": ["vrkansagara","wordpress","plugin"],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "authors": [
+    {
+      "name": "Vallabh Kansagara",
+      "homepage": "https://vrkansagara.in/author/vrk"
+    }
+  ],
+  "support": {
+    "forum": "https://vrkansagara.in"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vrk\\": "src/Vrk/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vrk\\Tests\\": "tests/phpunit/"
+    }
+  }
+}
