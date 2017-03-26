@@ -1,16 +1,4 @@
 <?php
-/*
- * Date: 22/3/17
- * Time: 10:40 AM
- * Plugin Name: VRK Compressor 
- * Plugin URI: https://vrkansagara.in/plugin/wp-compressor
- * Description: Compress all final output
- * Version: 1.0
- * Author: Vallabh Kansagara
- * Author URI: https://vrkansagara.in/author/vrk
- * Author Email: vrkansagara@gmail.com
-*/
-
 function getCompressedOutPut($buffer)
 {
     if (strpos($buffer, '<pre>') !== false) {
