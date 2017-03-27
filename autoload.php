@@ -1,5 +1,15 @@
 <?php
 /*
+ * Plugin Name: VRK Compressor
+ * Plugin URI: https://vrkansagara.in/plugin/vrk-compressor
+ * Description: Compress all final output
+ * Version: 1.0
+ * Author: Vallabh Kansagara
+ * Author URI: https://vrkansagara.in/author/vrk
+ * Author Email: vrkansagara@gmail.com
+*/
+
+/*
 BSD 3-Clause License
 
 Copyright (c) 2017, Vallabh Kansagara
@@ -31,43 +41,21 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/**
- * Autoloader for the Vrk plugin for WordPress
- */
 
-/**
- * Register the autoloader for the Vrk plugin classes.
- *
- * Based off the official PSR-4 autoloader example found here:
- * https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md
- *
- * @param string $class The fully-qualified class name
- *
- * @return void
- */
 spl_autoload_register(function ($class) {
-    // project-specific namespace prefix
     $prefix = 'Vrk\\';
 
-    // base directory for the namespace prefix
     $base_dir = defined('VRK_PLUGIN_DIR') ? VRK_PLUGIN_DIR : __DIR__ . '/src/Vrk/';
 
-    // does the class use the namespace prefix?
     $len = strlen($prefix);
     if (0 !== strncmp($prefix, $class, $len)) {
-        // no, move to the next registered autoloader
         return;
     }
 
-    // get the relative class name
     $relative_class = substr($class, $len);
 
-    // replace the namespace prefix with the base directory, replace namespace
-    // separators with directory separators in the relative class name, append
-    // with .php
     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
 
-    // if the file exists, require it
     if (file_exists($file)) {
         require $file;
     }
